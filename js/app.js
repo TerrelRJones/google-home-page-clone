@@ -34,33 +34,39 @@ const modal = document.querySelector('.modal');
 const settingsBtn = document.querySelector('.footer__settings-icon');
 const cancelBtn = document.querySelector('.modal__btn-cancel');
 
-//Open Modal
+//Open BG Modal
 function showModal(){
   settingsBtn.addEventListener('click', () => {
     modal.classList.add('modal--show')
   })
 }
 
-// Close Settings Modal
+// Close BG Modal
 function closeModal(){
   cancelBtn.addEventListener('click', () => {
     modal.classList.remove('modal--show');
   });
 }
 
+
+// Choosing background
 const bodyBg = document.querySelector('.body__bg');
 
 function chooseBg(url){
   const bgPhoto = url.urls.full;
-  localStorage.setItem('backgroundImage', `${bgPhoto}`);
+    localStorage.setItem('backgroundImage', `${bgPhoto}`);
 }
 
+// Setting background to body once DONE is clicked
 function setBg(){
   let bgImage = localStorage.getItem('backgroundImage');
         bodyBg.style.backgroundImage = `"url(${bgImage})"`;
-        console.log(bgImage)
+        //  console.log(bgImage)
 }
 
+
+
+// Showing user modal
 const userIconNav = document.querySelector('.nav__user-icon');
 const userModal = document.querySelector('.user__modal');
 
@@ -71,6 +77,7 @@ function showUserModal(){
   })
 }
 
+// close user modal when clicked anywhere outside of modal
 function closeUserModal(){
   window.addEventListener('mouseup', (e) => {
       if(e.target != userModal && e.target.parentNode != userModal){
