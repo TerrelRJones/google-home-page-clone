@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   </head>
   <body class="body__bg">
+    <div class="container">
     <header class="header__container">
       <nav class="nav__container">
           <div class="nav__left-space"></div>
@@ -36,12 +37,23 @@
       </nav>
     </header>
 
+    <!-- ---------User Modal------------ -->
+
+      <div class="user__modal">
+        <div class="user__modal-icon">
+            <div class="user__modal-camera-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+          <img src="https://lh3.googleusercontent.com/ogw/ADea4I4KQPCDiVFXRHsU8VY2fF6Z57FtIKpVDwaxgilG=s64-c-mo" alt="" />
+        </div>
+        <h3 class="user__modal-name">Terrel Jones</h3>
+        <h2 class="user__modal-email">TerrelRJones@gmail.com</h2>
+      </div>
+
     <main class="main__container">
         <div class="main__content-container">
         <div class="main__logo">
-           <h1 class="main__logo-text">
-               GOOGLE
-           </h1>
+           <img src="../img/googleIt.svg" alt="Google Logo">
         </div>
         <div class="main__search-box">
             <div class="main__search-box-icon-search">
@@ -51,6 +63,19 @@
             <div class="main__search-box-icon-mic">
             <i class="fas fa-microphone"></i>
         </div>
+        </div>
+        <div class="main__shortcut-container">
+          <div class="shortcut-card">
+            <div class="shortcut__settings">
+              <div class="shortcut__dots"></div>
+              <div class="shortcut__dots"></div>
+              <div class="shortcut__dots"></div>
+            </div>
+              <div class="shortcut__icon">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </div>
+              <h3 class="shortcut__text">Add shortcut</h3>
+          </div>
         </div>
     </div>
 </div>
@@ -118,6 +143,7 @@
       </div>
 
     </div>
+  </div>
     <script src="../js/app.js"></script>
   </body>
 </html>

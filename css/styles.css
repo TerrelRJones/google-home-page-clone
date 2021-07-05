@@ -20,6 +20,10 @@ body {
   overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
+.container{
+  position: relative;
+  padding: 5px;
+}
 .body__bg{
   background-image: url("https://images.unsplash.com/photo-1474224017046-182ece80b263?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2250&q=80");
   background-repeat: no-repeat;
@@ -29,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   right: 0;
-  height: 100px;
+  height: 60px;
   width: 100vw;
   /* background-color: red; */
   padding: 15px;
@@ -82,8 +86,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 .nav-circles {
-  height: 8px;
-  width: 8px;
+  height: 6px;
+  width: 6px;
   border-radius: 50%;
   background-color: white;
   margin: 1px;
@@ -118,12 +122,22 @@ body {
   margin-top: 70px;
 }
 .main__content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* background-color: red; */
+}
+.main__logo{
+  width: 250px;
+  height: 100px;
+}
+.main__logo img{
+  margin-bottom: 5px;
 }
 .main__search-box {
   display: flex;
   padding: 5px;
-  margin-top: 15px;
+  margin-top: 10px;
   background-color: white;
   width: 500px;
   height: 45px;
@@ -140,6 +154,55 @@ body {
   align-items: center;
   font-size: 15px;
   margin: 0 5px;
+}
+.main__shortcut-container{
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  height: 150px;
+  margin: 15px 0 5px 0;
+  /* background-color: black; */
+}
+.shortcut-card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+.shortcut-card:hover{
+  background-color: var(--transparent-grey);
+}
+.shortcut__settings{
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+}
+.shortcut__dots{
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  margin-bottom: 2px;
+  background-color: white;
+}
+.shortcut__icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 15px 0 25px 0;
+  background-color:white;
+  color: black;
+  font-size: 1.5rem;
 }
 .footer__container {
   display: flex;
@@ -168,6 +231,73 @@ body {
   height: 30px;
   font-size: 20px;
   cursor: pointer;
+}
+
+
+/************* USER MODAL ************/
+
+.user__modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+  height: 320px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: var(--grey);
+  color: white;
+  transform: translateX(102%);
+  transition: .3s ease-in-out;
+}
+
+.user__modal--show{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+  height: 320px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: var(--grey);
+  color: white;
+  transform: translateX(0);
+}
+
+.user__modal-icon, .user__modal-icon img{ 
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.user__modal-camera-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -3px;
+  bottom: -30px;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  border-radius: 50%;
+  background-color: var(--grey);
+  z-index: 1;
+  color: white;
+  box-shadow: 1px 4px 6px -1px rgba(0,0,0,0.91);
+  cursor: pointer;
+}
+.user__modal-name{
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.user__modal-email{
+  font-weight: 200;
+  text-transform: lowercase;
+  font-size: 15px;
 }
 
 
