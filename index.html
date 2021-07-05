@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   </head>
-  <body>
+  <body class="body__bg">
     <header class="header__container">
       <nav class="nav__container">
           <div class="nav__left-space"></div>
@@ -59,7 +59,14 @@
     </main>
 
     <footer class="footer__container">
-
+      <div class="footer__link">
+        <i class="fas fa-link"></i>
+        <h3 class="footer__name">A clone by Terrel Jones</h3>
+      </div>
+      <div class="footer__spacer"></div>
+      <div class="footer__settings-icon">
+        <i class="fas fa-pencil-alt"></i>
+      </div>
     </footer>
 
     <!-- MODAL  -->
@@ -70,22 +77,47 @@
         </div>
         <div class="modal__mid-container">
         <div class="modal__left">
-
+          <div class="modal__btn modal__btn--active">
+            <div class="modal__btn-icon">
+              <i class="fas fa-image"></i>
+            </div>
+            <h3 class="modal__btn-tab">Background</h3>
+          </div>
+          <div class="modal__btn">
+            <div class="modal__btn-icon">
+              <i class="fas fa-link"></i>
+            </div>
+            <h3 class="modal__btn-tab">Shortcuts</h3>
+          </div>
+          <div class="modal__btn">
+            <div class="modal__btn-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3 class="modal__btn-tab">Colour and theme</h3>
+          </div>
+          <div class="modal__btn-space"></div>
         </div>
         <div class="modal__right">
-
+            <!-- <div class="photo__card">
+              <div class="photo__bg">
+                <img src="https://images.unsplash.com/photo-1625136985656-3bd2affdc21b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80" alt="">
+              </div>
+              <div class="photo__description">
+                <h3>Camera</h3>
+              </div>
+            </div> -->
         </div>
         </div>
         <div class="modal__btm-container">
           <div class="modal__space"></div>
           <div class="modal__btns">
             <button class="modal__btn-cancel">Cancel</button>
-            <button class="modal__btn-done">Done</button>
+            <button class="modal__btn-done" onclick="setBg()">Done</button>
         </div>
         </div>
       </div>
 
     </div>
-    <!-- <script src="../js/app.js"></script> -->
+    <script src="../js/app.js"></script>
   </body>
 </html>
