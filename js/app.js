@@ -4,10 +4,10 @@ function fetchData() {
   fetch(`https://api.unsplash.com/photos/?client_id=${API_KEY}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
 
       data.map((photo) => {
-        const bgPhoto = photo.urls.small;
+        const bgPhoto = photo.urls.thumb;
         const bgName = photo.user.name;
         const id = photo.id;
 
@@ -55,7 +55,8 @@ function closeModal() {
 const bodyBg = document.querySelector(".body__bg");
 
 function chooseBg(url) {
-  const bgPhoto = url.urls.full;
+  const bgPhoto = url.urls.raw + "&w=750&dpr=2";
+  console.log(bgPhoto)
   const image = document.querySelector(".photo__bg-img");
   const id = url.id;
 
@@ -103,9 +104,23 @@ function closeUserModal() {
   });
 }
 
-let userSearch = document.querySelector('.main__search-input').value;
 
-console.log(userSearch)
+
+// Search GOOGLE
+let userSearch = document.querySelector('.main__search-input');
+
+userSearch.addEventListener("keyup", function (e) {
+  e.preventDefault
+  if (e.keyCode === 13) {
+    searchGoogle(); // 3. we called the function here
+  }
+});
+
+function searchGoogle(){
+  searchValue = userSearch.value;
+  window.open(`http://google.com/search?q=${searchValue}`);
+}
+
 
 fetchData();
 showUserModal();
