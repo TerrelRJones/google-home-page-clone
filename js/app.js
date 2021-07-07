@@ -24,7 +24,6 @@ function fetchData() {
               <h3>${bgName}</h3>
             </div>
           </div>`;
-        // console.log(id)
       });
     });
 }
@@ -42,7 +41,7 @@ function showModal() {
   });
 }
 
-// Close BG Modal
+// Close BG Modal & returning background to original
 function closeModal() {
   cancelBtn.addEventListener("click", () => {
     modal.style.display = "none";
@@ -51,36 +50,37 @@ function closeModal() {
   });
 }
 
-// Choosing background
-const bodyBg = document.querySelector(".body__bg");
+// Choosing background -- preview
+const bodyBg = document.body;
+let bgPhoto = "";
 
 function chooseBg(url) {
-  const bgPhoto = url.urls.raw + "&w=750&dpr=2";
-  console.log(bgPhoto)
-  const image = document.querySelector(".photo__bg-img");
-  const id = url.id;
-
-  localStorage.setItem("backgroundImage", `${bgPhoto}`);
-  bodyBg.style.backgroundImage = `url("${bgPhoto}")`;
-  //  image[].classList.add('photo__bg-img--active');
+  bgPhoto = url.urls.raw + "&w=1500&dpr=2";
+    // console.log(bgPhoto)
+     bodyBg.style.backgroundImage = `url("${bgPhoto}")`;
 }
 
-// Setting background to body once DONE is clicked
+// Setting background to body & local storage once DONE is clicked
 function setBg() {
-  let bgImage = localStorage.getItem("backgroundImage");
-  bodyBg.style.backgroundImage = `url("${bgImage}")`;
+    let bgImage = localStorage.setItem("backgroundImage", `${bgPhoto}`);
+          bgImage = localStorage.getItem("backgroundImage");
+
+             bodyBg.style.backgroundImage = `url("${bgImage}")`;
 
   modal.style.display = "none";
-  //  console.log(bgImage)
 }
 
+// Getting background photo from local storage
 function getBgFromStorage() {
   let bgImage = localStorage.getItem("backgroundImage");
+
   if (bgImage) {
     bodyBg.style.backgroundImage = `url("${bgImage}")`;
-  } else {
+  } 
+  else {
     bodyBg.style.backgroundImage = `url("https://images.unsplash.com/photo-1474224017046-182ece80b263?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2250&q=80")`;
   }
+
 }
 
 // Showing user modal
@@ -104,6 +104,13 @@ function closeUserModal() {
   });
 }
 
+// function resetBg(){
+//   // localStorage.clear();
+//    let defaultImg = localStorage.setItem("backgroundImage", 'https://images.unsplash.com/photo-1474224017046-182ece80b263?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80');
+//         defaultImg = localStorage.getItem("backgroundImage");
+//       bodyBg.style.backgroundImage = defaultImg;
+// };
+
 
 
 // Search GOOGLE
@@ -112,7 +119,7 @@ let userSearch = document.querySelector('.main__search-input');
 userSearch.addEventListener("keyup", function (e) {
   e.preventDefault
   if (e.keyCode === 13) {
-    searchGoogle(); // 3. we called the function here
+    searchGoogle(); 
   }
 });
 
