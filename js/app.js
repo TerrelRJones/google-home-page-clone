@@ -14,11 +14,9 @@ function fetchData() {
         let pic = document.querySelector(".modal__right");
         let fullpic = document.createElement("div");
         pic.appendChild(fullpic);
-        fullpic.innerHTML = `<div class="photo__card" onclick='chooseBg(${JSON.stringify(
-          photo
-        )})'>
-            <div class="photo__bg">
-              <img class="photo__bg-img" src="${bgPhoto}" alt="">
+        fullpic.innerHTML = `<div class="photo__card" onclick='chooseBg(${JSON.stringify(photo.urls.full)})'>
+            <div class="photo__bg" style="background-image: url('${bgPhoto}');>
+            <img src=""/>
             </div>
             <div class="photo__description">
               <h3>${bgName}</h3>
@@ -55,7 +53,7 @@ const bodyBg = document.body;
 let bgPhoto = "";
 
 function chooseBg(url) {
-  bgPhoto = url.urls.raw + "&w=1500&dpr=2";
+  bgPhoto = url;
     // console.log(bgPhoto)
      bodyBg.style.backgroundImage = `url("${bgPhoto}")`;
 }
