@@ -1,7 +1,12 @@
 const API_KEY = "m4G7b4UBSAQdWyoe2tg7lyv_YXGqJuGMpSSi3MMcUxc";
 
+let imageWidth = window.innerWidth;
+let imageHeight = window.innerHeight;
+console.log(imageWidth, imageHeight);
+
+
 function fetchData() {
-  fetch(`https://api.unsplash.com/photos/?client_id=${API_KEY}`)
+  fetch(`https://api.unsplash.com/photos/?client_id=${API_KEY}&orientation=landscape&count=15`) //Tried to query orientation and count
     .then((response) => response.json())
     .then((data) => {
       // console.log(data);
@@ -52,9 +57,10 @@ function closeModal() {
 const bodyBg = document.body;
 let bgPhoto = "";
 
+
 function chooseBg(url) {
-  bgPhoto = url;
-    // console.log(bgPhoto)
+  bgPhoto = url + `&auto=format`;     //+ `&w=${imageWidth}&h=${imageHeight}&dpr=2`;
+    console.log(bgPhoto)
      bodyBg.style.backgroundImage = `url("${bgPhoto}")`;
 }
 
