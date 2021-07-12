@@ -19,15 +19,15 @@ function fetchData() {
         let pic = document.querySelector(".modal__right");
         let fullpic = document.createElement("div");
         pic.appendChild(fullpic);
-        fullpic.innerHTML = `<div class="photo__card" onclick='chooseBg(${JSON.stringify(photo.urls.full)})'>
-            <div class="photo__bg" style="background-image: url('${bgPhoto}');>
-            <img src=""/>
-            </div>
-            <div class="photo__description">
-              <h3>${bgName}</h3>
-            </div>
-          </div>`;
-      });
+        fullpic.innerHTML = `<div class="photo__card" onclick='chooseBg(${JSON.stringify(photo.urls.raw + "&w=" + imageWidth +"&dpr=2")})'>
+        <div class="photo__bg" style="background-image: url('${photo.urls.raw + "&w=175&dpr=2"}');>
+        <img src="" />
+        </div>
+        <div class="photo__description">
+          <h3>${bgName}</h3>
+        </div>
+      </div>`;
+  });
     });
 }
 
@@ -103,7 +103,7 @@ function closeUserModal() {
   window.addEventListener("mouseup", (e) => {
     if (e.target != userModal && e.target.parentNode != userModal) {
       userModal.classList.remove("user__modal--show");
-      console.log("body clicked");
+      // console.log("body clicked");
     }
   });
 }
@@ -114,6 +114,18 @@ function closeUserModal() {
 //         defaultImg = localStorage.getItem("backgroundImage");
 //       bodyBg.style.backgroundImage = defaultImg;
 // };
+
+const userSelect = document.querySelector('.user__modal-avatar-circle');
+const userIcon = document.querySelector('.user__modal-avatar');
+
+console.log(userSelect.style.backgroundImage)
+console.log(userIcon.src)
+
+function setUserIcon(){
+    
+}
+
+
 
 
 

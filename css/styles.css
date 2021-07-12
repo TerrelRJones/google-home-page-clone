@@ -256,6 +256,7 @@ body {
   color: white;
   transform: translateX(102%);
   transition: 0.3s ease-in-out;
+  padding: 10px;
 }
 
 .user__modal--show {
@@ -281,6 +282,9 @@ body {
   margin-top: 20px;
   margin-bottom: 40px;
 }
+.user__modal-icon{
+  
+}
 .user__modal-camera-icon {
   display: flex;
   justify-content: center;
@@ -298,6 +302,11 @@ body {
   box-shadow: 1px 4px 6px -1px rgba(0, 0, 0, 0.91);
   cursor: pointer;
 }
+.user__modal-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .user__modal-name {
   font-weight: 400;
   margin-bottom: 10px;
@@ -306,6 +315,33 @@ body {
   font-weight: 200;
   text-transform: lowercase;
   font-size: 15px;
+  margin-bottom: 15px;
+}
+.user__modal-avatar-container{
+  height: 100%;
+  width: 100%;
+  /* background-color: red; */
+  border: 1px solid var(--light-grey);
+  border-radius: 10px;
+  padding: 5px;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.user__modal-avatar-circle{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border: 3px solid var(--grey);
+  transition: 0.2s ease-in-out;
+}
+.user__modal-avatar-circle:hover {
+  border: 3px solid var(--blue);
+
 }
 
 /************* MODAL ************/
@@ -524,7 +560,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
   .user__modal{
-    display: none;
+    /* display: none; */
   }
   .nav__links{
     position: absolute;
