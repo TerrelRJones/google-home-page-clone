@@ -94,7 +94,7 @@ const userModal = document.querySelector(".user__modal");
 function showUserModal() {
   userIconNav.addEventListener("click", () => {
     userModal.classList.add("user__modal--show");
-    console.log("clicked user modal");
+    // console.log("clicked user modal");
   });
 }
 
@@ -103,7 +103,6 @@ function closeUserModal() {
   window.addEventListener("mouseup", (e) => {
     if (e.target != userModal && e.target.parentNode != userModal) {
       userModal.classList.remove("user__modal--show");
-      // console.log("body clicked");
     }
   });
 }
@@ -117,16 +116,30 @@ function closeUserModal() {
 
 const userSelect = document.querySelector('.user__modal-avatar-circle');
 const userIcon = document.querySelector('.user__modal-avatar');
+const userMainIcon = document.querySelector('.nav__user-icon-img');
+const userDefaultIcon = document.querySelector('.nav__user-icon-img').src;
 
-console.log(userSelect.style.backgroundImage)
-console.log(userIcon.src)
 
-function setUserIcon(){
-    
+// Setting users Icon
+function setUserIcon(img){
+  userIcon.src = img;
+    localStorage.setItem('userIcon', img)
+
+    getUserIcon();
 }
 
+// Loading users icon from localStorage
+function getUserIcon(){
+  let avatar = localStorage.getItem('userIcon');
+      if(!avatar){
+        userMainIcon.src = userDefaultIcon;
+      } 
+      else {
+        userMainIcon.src = avatar;
+          userIcon.src = avatar;
 
-
+      }
+}
 
 
 // Search GOOGLE
@@ -150,4 +163,5 @@ showUserModal();
 closeUserModal();
 showModal();
 closeModal();
+getUserIcon();
 getBgFromStorage();
