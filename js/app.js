@@ -96,6 +96,7 @@ const userModal = document.querySelector(".user__modal");
 function showUserModal() {
 	userIconNav.addEventListener("click", () => {
 		userModal.classList.add("user__modal--show");
+		userModal.style.display = "flex";
 		// console.log("clicked user modal");
 	});
 }

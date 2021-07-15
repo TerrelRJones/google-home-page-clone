@@ -244,7 +244,7 @@ body {
 
 .user__modal {
   z-index: 5;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   position: absolute;
@@ -547,7 +547,6 @@ body {
 
 
 /* MOBILE  */
-
 @media screen and (max-width: 768px){
   .main__search-box{
     width: 400px;
@@ -559,9 +558,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .user__modal{
-    /* display: none; */
-  }
+
   .nav__links{
     position: absolute;
     left: 0;
@@ -604,9 +601,7 @@ body {
  .main__search-box{
    width: 360px;
  }
- .user__modal{
-   margin-top: 50px;
- }
+
  .modal__right{
    display: flex;
    flex-direction: column;
