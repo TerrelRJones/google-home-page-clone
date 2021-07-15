@@ -112,6 +112,7 @@ function closeUserModal() {
 			e.target.parentNode.parentNode.parentNode != userModal
 		) {
 			userModal.classList.remove("user__modal--show");
+			userModal.style.display = "none";
 		}
 	});
 }
