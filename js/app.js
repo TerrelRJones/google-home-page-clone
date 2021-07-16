@@ -33,6 +33,9 @@ function fetchData() {
         </div>
       </div>`;
 			});
+		})
+		.catch((error) => {
+			console.log("Error:", error);
 		});
 }
 
@@ -112,9 +115,15 @@ function closeUserModal() {
 			e.target.parentNode.parentNode.parentNode != userModal
 		) {
 			userModal.classList.remove("user__modal--show");
-			userModal.style.display = "none";
+
+			setTimeout(displayNoneUserModal(), 600);
 		}
 	});
+}
+
+// Gives user__modal a display of none
+function displayNoneUserModal() {
+	userModal.style.display = "none";
 }
 
 const cameraBtn = document.querySelector(".user__modal-camera-icon");
