@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --blue: #8ab4f7;
+  --grey: #282c2d;
+  --light-grey: rgb(150, 150, 150);
+  --transparent-grey: rgba(199, 199, 199, 0.2);
+  --transparent-blue: rgba(138, 180, 247, 0.2);
+  --drop-shadow:  box-shadow: 1px 4px 6px -1px rgba(0, 0, 0, 0.91);
+}
+
+
+
+/* MOBILE  */
+@media screen and (max-width: 768px){
+    body{
+      width: 100vw;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+    .main__search-box{
+      width: 400px;
+    }
+    .modal__container{
+      width: 700px;
+    }
+    .modal__right{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .nav__links{
+      position: absolute;
+      left: 0;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    body{
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .main__search-box{
+      width: 400px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 393px) {
+    body{
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .main__search-box{
+      width: 380px;
+    }
+    
+  }
+  
+  
+  
+  @media screen and (max-width: 375px) {
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      padding: 5px;
+    }
+   .nav__container{
+     justify-content: space-between;
+   }
+   .nav__links{
+     position: absolute;
+     left: 0;
+   }
+   .main__search-box{
+     width: 360px;
+   }
+  
+   .modal__right{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   .modal__btn--active{
+     background-color: transparent;
+   }
+  }
+  
+  @media screen and (max-width: 360px) {
+    body{
+      width: 100vw;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+    .main__search-box{
+      width: 300px;
+    } 
+    .nav__links{
+      position: absolute;
+      left: 0;
+    }
+    .modal__right{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal__btn--active{
+      background-color: transparent;
+    }
+  }
