@@ -548,6 +548,11 @@ body {
 
 /* MOBILE  */
 @media screen and (max-width: 768px){
+  body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
   .main__search-box{
     width: 400px;
   }
@@ -566,6 +571,11 @@ body {
 }
 
 @media screen and (max-width: 450px) {
+  body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
   .main__search-box{
     width: 400px;
   }
@@ -573,6 +583,11 @@ body {
 }
 
 @media screen and (max-width: 393px) {
+  body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
   .main__search-box{
     width: 380px;
   }
@@ -588,7 +603,7 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 5px;
   }
  .nav__container{
@@ -613,6 +628,11 @@ body {
 }
 
 @media screen and (max-width: 360px) {
+  body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
   .main__search-box{
     width: 300px;
   } 

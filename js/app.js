@@ -116,15 +116,15 @@ function closeUserModal() {
 		) {
 			userModal.classList.remove("user__modal--show");
 
-			setTimeout(displayNoneUserModal(), 600);
+			// setTimeout(displayNoneUserModal(), 600);
 		}
 	});
 }
 
 // Gives user__modal a display of none
-function displayNoneUserModal() {
-	userModal.style.display = "none";
-}
+// function displayNoneUserModal() {
+// 	userModal.style.display = "none";
+// }
 
 const cameraBtn = document.querySelector(".user__modal-camera-icon");
 
